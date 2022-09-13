@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" xmlns:color="http://www.omg.org/spec/BPMN/non-normative/color/1.0" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Web Modeler" exporterVersion="7d3fb60" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.0.0" camunda:diagramRelationId="94f8cd89-33aa-425f-b22c-7c7fd300b24c">
+  <bpmn:collaboration id="Collaboration_0zv3n16">
+    <bpmn:participant id="Participant_0qq7ljw" name="Encuesta" processRef="Process_6d5fc3e0-7f6b-4846-91c7-f5a61e9d2317" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_6d5fc3e0-7f6b-4846-91c7-f5a61e9d2317" isExecutable="true">
+    <bpmn:exclusiveGateway id="Gateway_0f3206k">
+      <bpmn:incoming>Flow_0obk7o0</bpmn:incoming>
+      <bpmn:outgoing>Flow_17ycq3n</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1bfy9uh</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_0obk7o0" sourceRef="Event_1qgulm1" targetRef="Gateway_0f3206k" />
+    <bpmn:sequenceFlow id="Flow_17ycq3n" sourceRef="Gateway_0f3206k" targetRef="Activity_02gd7ff" />
+    <bpmn:sequenceFlow id="Flow_1bfy9uh" sourceRef="Gateway_0f3206k" targetRef="Event_15lm2w9" />
+    <bpmn:endEvent id="Event_15lm2w9">
+      <bpmn:incoming>Flow_1bfy9uh</bpmn:incoming>
+      <bpmn:incoming>Flow_0y01etr</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0h4tlbs" sourceRef="Activity_02gd7ff" targetRef="Event_0bcdl81" />
+    <bpmn:sequenceFlow id="Flow_0y01etr" sourceRef="Event_0bcdl81" targetRef="Event_15lm2w9" />
+    <bpmn:intermediateCatchEvent id="Event_1qgulm1" name="Encuesta Compra">
+      <bpmn:outgoing>Flow_0obk7o0</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_1kpd737" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:task id="Activity_02gd7ff" name="Diligencia encuesta">
+      <bpmn:incoming>Flow_17ycq3n</bpmn:incoming>
+      <bpmn:outgoing>Flow_0h4tlbs</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:intermediateThrowEvent id="Event_0bcdl81" name="Se envia respuestas">
+      <bpmn:incoming>Flow_0h4tlbs</bpmn:incoming>
+      <bpmn:outgoing>Flow_0y01etr</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_1p2z6lf" />
+    </bpmn:intermediateThrowEvent>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0zv3n16">
+      <bpmndi:BPMNShape id="Participant_0qq7ljw_di" bpmnElement="Participant_0qq7ljw" isHorizontal="true">
+        <dc:Bounds x="160" y="80" width="730" height="250" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0f3206k_di" bpmnElement="Gateway_0f3206k" isMarkerVisible="true" bioc:stroke="#fb8c00" bioc:fill="#ffe0b2" color:background-color="#ffe0b2" color:border-color="#fb8c00">
+        <dc:Bounds x="455" y="155" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_15lm2w9_di" bpmnElement="Event_15lm2w9" bioc:stroke="#e53935" bioc:fill="#ffcdd2" color:background-color="#ffcdd2" color:border-color="#e53935">
+        <dc:Bounds x="652" y="262" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_14484li_di" bpmnElement="Event_1qgulm1" bioc:stroke="#fb8c00" bioc:fill="#ffe0b2" color:background-color="#ffe0b2" color:border-color="#fb8c00">
+        <dc:Bounds x="272" y="162" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="246" y="205" width="89" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_02gd7ff_di" bpmnElement="Activity_02gd7ff" bioc:stroke="#1e88e5" bioc:fill="#bbdefb" color:background-color="#bbdefb" color:border-color="#1e88e5">
+        <dc:Bounds x="590" y="140" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1gylvu5_di" bpmnElement="Event_0bcdl81" bioc:stroke="#fb8c00" bioc:fill="#ffe0b2" color:background-color="#ffe0b2" color:border-color="#fb8c00">
+        <dc:Bounds x="802" y="162" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="792" y="125" width="55" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0obk7o0_di" bpmnElement="Flow_0obk7o0">
+        <di:waypoint x="308" y="180" />
+        <di:waypoint x="455" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_17ycq3n_di" bpmnElement="Flow_17ycq3n">
+        <di:waypoint x="505" y="180" />
+        <di:waypoint x="590" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1bfy9uh_di" bpmnElement="Flow_1bfy9uh">
+        <di:waypoint x="480" y="205" />
+        <di:waypoint x="480" y="280" />
+        <di:waypoint x="652" y="280" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0h4tlbs_di" bpmnElement="Flow_0h4tlbs">
+        <di:waypoint x="690" y="180" />
+        <di:waypoint x="802" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0y01etr_di" bpmnElement="Flow_0y01etr">
+        <di:waypoint x="820" y="198" />
+        <di:waypoint x="820" y="280" />
+        <di:waypoint x="688" y="280" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
