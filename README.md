@@ -17,7 +17,7 @@
 
 ![preparaci-n-del-pedido](https://user-images.githubusercontent.com/112451362/189788724-93745d15-275a-4873-a58b-e339aa007679.png)
 
-#despacho-pedido: proceso 
+#despacho-pedido: El domiciliario recibe una notificación por parte del tendero para realizar un nuevo pedido, este realiza unas tareas desde la recolección del pedidio hasta llegar al punto de entrega, luego de ello se tiene una decisión donde el cliente puede aceptar, rechzar o no recibir el pedido, luego el domiciliario regresa a la tienda y da una notificación del estado del pedido al tendero
 
 ![despacho-pedido](https://user-images.githubusercontent.com/112451362/189788802-108db9c5-726f-48f6-b622-8cec03efad15.png)
 
