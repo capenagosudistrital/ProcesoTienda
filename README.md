@@ -22,7 +22,7 @@
 ![despacho-pedido](https://user-images.githubusercontent.com/112451362/189788802-108db9c5-726f-48f6-b622-8cec03efad15.png)
 
 
-#estado-despacho-pedido
+#estado-despacho-pedido: Al domiciliario llegar de la ruta de despacho del pedido, notifica al tendero el estado del mismo, donde el tendero envia la notificación de encuesta de satisfacción al clienteo o retorna los productos a la tienda
 
 ![estado-despacho-pedido](https://user-images.githubusercontent.com/112451362/189788828-c8e6a652-9c43-4497-8ca9-a3f40c41d4c6.png)
 
